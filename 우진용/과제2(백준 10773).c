@@ -1,4 +1,4 @@
-// ¹éÁØ 10773¹ø
+// ë°±ì¤€ 10773ë²ˆ
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #define MAX_STACK_SIZE 1000000
