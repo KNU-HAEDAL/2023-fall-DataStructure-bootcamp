@@ -56,10 +56,10 @@ int main()
 	char c;
 
 	init_stack();
-	printf("¼ö½Ä: ");
+	printf("Â¼Ã¶Â½Ã„: ");
 	scanf("%s", in);
 
-	printf("°ýÈ£ ¼ö: ");
+	printf("Â°Ã½ÃˆÂ£ Â¼Ã¶: ");
 	do
 	{
 		c = in[i];
