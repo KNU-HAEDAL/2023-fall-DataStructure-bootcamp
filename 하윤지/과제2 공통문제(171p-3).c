@@ -1,3 +1,4 @@
+// 171p 3번 - 10, 20, 30, 40, 50 큐에 넣고 3개의 항목을 삭제 -> 남아있는 항목은?
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
