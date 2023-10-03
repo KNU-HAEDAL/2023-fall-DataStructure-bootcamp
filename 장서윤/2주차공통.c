@@ -54,15 +54,15 @@ int is_empty(QueueType* q)
 void enqueue(QueueType* q, int item) 
 {
 	if (is_full(q)) {
-		error((char*)"Å¥°¡ Æ÷È­»óÅÂÀÔ´Ï´Ù.");
+		error((char*)"íê°€ í¬í™”ìƒíƒœì…ë‹ˆë‹¤.");
 		return;
 	}
 	q->data[++(q->rear)] = item;
 }
 
-element dequeue(QueueType* q) {
+int dequeue(QueueType* q) {
 	if (is_empty(q)) {
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù.");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤.");
 		return -1;
 	}
 	int item = q->data[++(q->front)];
@@ -89,4 +89,4 @@ int main(void)
 	queue_print(&q);
 }
 
-// ´äÀº 40,50
+// ë‹µì€ 40,50
