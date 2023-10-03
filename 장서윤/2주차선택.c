@@ -17,7 +17,7 @@ int is_full() {
 
 void enqueue(element item) {
     if (is_full()) {
-        printf("Å¥°¡ Æ÷È­»óÅÂÀÔ´Ï´Ù.\n");
+        printf("íê°€ í¬í™”ìƒíƒœì…ë‹ˆë‹¤.\n");
         return;
     }
     rear = (rear + 1) % MAX_QUEUE_SIZE;
@@ -26,7 +26,7 @@ void enqueue(element item) {
 
 element dequeue() {
     if (is_empty()) {
-        printf("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù.\n");
+        printf("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤.\n");
         return -1;
     }
     front = (front + 1) % MAX_QUEUE_SIZE;
@@ -34,7 +34,7 @@ element dequeue() {
 }
 
 int get_count() {
-    return (rear - front + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
+    return (rear - front);
 }
 
 int main() {
@@ -42,12 +42,12 @@ int main() {
     enqueue(20);
     enqueue(30);
 
-    printf("Å¥¿¡ ÀÖ´Â ¿ä¼ÒÀÇ °³¼ö: %d\n", get_count()); // 3
+    printf("íì— ìˆëŠ” ìš”ì†Œì˜ ê°œìˆ˜: %d\n", get_count()); // 3
 
     dequeue();
     dequeue();
 
-    printf("Å¥¿¡ ÀÖ´Â ¿ä¼ÒÀÇ °³¼ö: %d\n", get_count()); // 1
+    printf("íì— ìˆëŠ” ìš”ì†Œì˜ ê°œìˆ˜: %d\n", get_count()); // 1
 
     return 0;
 }
