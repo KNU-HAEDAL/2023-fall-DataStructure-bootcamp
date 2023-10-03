@@ -10,30 +10,30 @@ typedef int element;
 element stack[MAX_STACK_SIZE];
 int top = -1;
 
-int is_empty() //°ø¹é »óÅÂ °ËÃâ ÇÔ¼ö
+int is_empty() //ê³µë°± ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 {
 	return (top == -1);
 }
 
 
-int is_full() // Æ÷È­ »óÅÂ °ËÃâ ÇÔ¼ö
+int is_full() // í¬í™” ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
 {
 	return (top == (MAX_STACK_SIZE - 1));
 }
 
-void push(element item) //»ğÀÔÇÔ¼ö
+void push(element item) //ì‚½ì…í•¨ìˆ˜
 {
 	if (is_full()) {
-		fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
 		return;
 	}
 	else stack[++top] = item;
 }
 
-element pop() //»èÁ¦ÇÔ¼ö
+element pop() //ì‚­ì œí•¨ìˆ˜
 {
 	if (is_empty()) {
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else return stack[top--];
@@ -42,7 +42,7 @@ element pop() //»èÁ¦ÇÔ¼ö
 element peek()
 {
 	if (is_empty()) {
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 	}
 	else return stack[top];
 }
@@ -52,7 +52,7 @@ int p1_1()
 {
 	int a, b, c, d, e, f;
 
-	printf("Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%d %d %d %d %d %d", &a, &b, &c, &d, &e, &f);
 
 	push(a);
