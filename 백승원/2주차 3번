@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_QUEUE_SIZE 5
+
+typedef struct {
+    int data[MAX_QUEUE_SIZE];
+    int front;
+    int rear;
+} Queue;
+
+void initQueue(Queue *q) {
+    q->front = q->rear = -1;
+}
+
+int isFull(Queue *q) {
+    return (q->rear + 1) % MAX_QUEUE_SIZE == q->front;
+}
+
+int isEmpty(Queue *q) {
+    return q->front == -1;
+}
+
+void enqueue(Queue *q, int value) {
+    if (isFull(q)) {
+        printf("Queue is full\n");
+        return;
+    }
+    if (isEmpty(q))
+        q->front = q->rear = 0;
+    else
+        q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
+    q->data[q->rear] = value;
+}
+
+int dequeue(Queue *q) {
+    if (isEmpty(q)) {
+        printf("Queue is empty\n");
+        return -1;
+    }
+    int value = q->data[q->front];
+    if (q->front == q->rear)
+        q->front = q->rear = -1;
+    else
+        q->front = (q->front + 1) % MAX_QUEUE_SIZE;
+    return value;
+}
+
+int main() {
+    Queue q;
+    initQueue(&q);
+
+    enqueue(&q, 10);
+    enqueue(&q, 20);
+    enqueue(&q, 30);
+    enqueue(&q, 40);
+    enqueue(&q, 50);
+
+    // 큐에서 3개의 항목 삭제
+    for (int i = 0; i < 3; i++) {
+        dequeue(&q);
+    }
+
+    // 남은 항목 출력
+    while (!isEmpty(&q)) {
+        printf("%d\n", dequeue(&q));
+    }
+
+    return 0;
+}
