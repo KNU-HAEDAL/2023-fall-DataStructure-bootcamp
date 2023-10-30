@@ -33,24 +33,24 @@ TreeNode* insertNode(TreeNode *node, int key) {
     return node;
 }
 
-int inorder(TreeNode *root) {
+void inorder(TreeNode *root) {
     if (root != NULL) {
-        return root->key + inorder(root->left) + inorder(root->right);
-    } else {
-        return 0;
+        inorder(root->left);
+        printf("%d ", root->key);
+        inorder(root->right);
     }
 }
 
 int main() {
 
+    int arr[11] = {11, 3, 4, 1, 56, 5, 6, 2, 98, 32, 23};
     TreeNode* root = NULL;
 
-    for (int i = 1; i <= 10; i++) {
-        root = insertNode(root, i);
+    for (int i = 0; i < 11; i++) {
+        root = insertNode(root, arr[i]);
     }
 
-    int sum = inorder(root);
-    printf("노드의 합은 %d입니다.\n", sum);
+    inorder(root);
 
     return 0;
 }
